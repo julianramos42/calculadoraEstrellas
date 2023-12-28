@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
   min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #efefef;
+  background: url(./images/spacetile.png) rgba(0,0,0,0.6);
+  background-blend-mode: darken;
+  animation: moveBackground 30s linear infinite;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes moveBackground {
   from {
-    transform: rotate(0deg);
+    background-position: 0% 0%;
   }
   to {
-    transform: rotate(360deg);
+    background-position: 100% 100%;
   }
+}
+
+header{
+  margin: 0 0 3vh 0;
+  text-align: center;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+}
+
+.elementos{
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  list-style: none;
+  margin: 1.8rem 0;
+}
+
+.elementos li section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.titulo-elemento{
+  font-size: 18px;
+}
+
+input{
+  width: 50px;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.craftear{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.craftear button{
+  width: 150px;
+  height: 30px;
+  font-weight: bold;
+}
+
+@media screen and (max-width:999px) {
+  body{
+    padding: 10%;
+    
+  }
+}
+
+@media screen and (max-width:850px) {
+  body{
+    padding: 5%;
+    
+  }
+  .elementos{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width:656px) {
+
 }
